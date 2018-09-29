@@ -10,14 +10,18 @@ import { MyApp }      from './app.component';
 import { HomePage }   from '../pages/home/home';
 import { FilterInitPage } from '../pages/filter-init/filter-init';
 import { MapsPage } from '../pages/maps/maps';
+import { QRCodePage } from '../pages/qrcode/qrcode';
 
 // Providers
 import { HttpReq }      from '../providers/http-req';
 import { GeoService }  from '../providers/geoservice';
 import { Filter }       from '../providers/filter' ;
 
+
 // Native modules
 import { Geolocation } from '@ionic-native/geolocation';
+import { QRScanner } from '@ionic-native/qr-scanner';
+import { AndroidPermissions } from '@ionic-native/android-permissions';
 
 @NgModule({
   declarations: [
@@ -25,6 +29,7 @@ import { Geolocation } from '@ionic-native/geolocation';
     HomePage,
     MapsPage,
     FilterInitPage,
+    QRCodePage
   ],
   imports: [
     BrowserModule,
@@ -35,7 +40,8 @@ import { Geolocation } from '@ionic-native/geolocation';
     MyApp,
     HomePage,
     MapsPage,
-    FilterInitPage
+    FilterInitPage,
+    QRCodePage
   ],
   providers: [
     LaunchNavigator,
@@ -45,7 +51,9 @@ import { Geolocation } from '@ionic-native/geolocation';
     HttpReq,
     GeoService,
     Filter,
-    Geolocation
+    Geolocation,
+    QRScanner,
+    AndroidPermissions
   ]
 })
 export class AppModule {}
