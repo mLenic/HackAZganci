@@ -4,12 +4,15 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { LaunchNavigator } from '@ionic-native/launch-navigator';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { NativeAudio } from '@ionic-native/native-audio';
 
 // Pages
 import { MyApp }      from './app.component';
 import { HomePage }   from '../pages/home/home';
 import { FilterInitPage } from '../pages/filter-init/filter-init';
 import { MapsPage } from '../pages/maps/maps';
+import { AudioPage } from '../pages/audioplayer/audioplayer';
+
 
 // Providers
 import { HttpReq }      from '../providers/http-req';
@@ -24,6 +27,7 @@ import { Geolocation } from '@ionic-native/geolocation';
     MyApp,
     HomePage,
     MapsPage,
+    AudioPage,
     FilterInitPage,
   ],
   imports: [
@@ -35,7 +39,8 @@ import { Geolocation } from '@ionic-native/geolocation';
     MyApp,
     HomePage,
     MapsPage,
-    FilterInitPage
+    FilterInitPage,
+    AudioPage
   ],
   providers: [
     LaunchNavigator,
@@ -45,6 +50,7 @@ import { Geolocation } from '@ionic-native/geolocation';
     HttpReq,
     GeoService,
     Filter,
+    NativeAudio,
     Geolocation
   ]
 })
