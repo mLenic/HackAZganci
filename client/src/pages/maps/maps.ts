@@ -38,6 +38,12 @@ export class MapsPage {
         position: 'top',
       });
       toast.present();
+    }, error => {
+      let toast = this.toastCtrl.create({
+        message: "ERROR",
+        duration: 1000,
+        position: 'top',
+      });
     });
   }
 

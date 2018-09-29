@@ -25,6 +25,8 @@ export class GeoService {
                         long: resp.coords.longitude,
                     }
                     resolve(dtx);
+                } else {
+                    reject('error');
                 }
             }).catch((error) => {
                 reject('error');
