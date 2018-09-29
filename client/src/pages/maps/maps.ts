@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Component, NgZone } from '@angular/core';
+import { NavController, ToastController } from 'ionic-angular';
 import { LaunchNavigator, LaunchNavigatorOptions } from '@ionic-native/launch-navigator';
+import { GeoService } from '../../providers/geoservice';
 import { dediscina } from '../../data/dediscina';
 
 @Component({
@@ -9,15 +10,45 @@ import { dediscina } from '../../data/dediscina';
 })
 export class MapsPage {
 
-  constructor(public navCtrl: NavController, private launchNavigator: LaunchNavigator) {
+  public latitude: number;
+  public longitude: number;
 
+  constructor(
+    public navCtrl: NavController,
+    public toastCtrl: ToastController,
+    private launchNavigator: LaunchNavigator,
+    private ngZone: NgZone,
+    private geoService: GeoService) {
   }
 
   ionViewDidLoad() {
+    this.getGeoLocation();
+    this.launchGoogleMaps();
+  }
+
+  private getGeoLocation() {
+    this.geoService.getGeoObservable()
+        .subscribe((data) => {
+            this.ngZone.run(() => {
+              this.latitude = data.lat;
+              this.longitude = data.long;
+            });
+            let toast = this.toastCtrl.create({
+              message: "Latitude " + this.latitude + " Longitude: " + this.longitude,
+              duration: 1000,
+              position: 'top',
+            });
+            toast.present();
+        });
+
+    this.geoService.startWatchingGeolocation();
+  }
+
+  private launchGoogleMaps() {
     const indices = this.randomArray(10, dediscina.length);
 
     let options: LaunchNavigatorOptions = {
-      start: this.formatCoordinates(indices[0]),
+      start: `${this.latitude},${this.longitude}`,
       app: 'google_maps'
     };
 
@@ -26,8 +57,6 @@ export class MapsPage {
       destination += `${this.formatCoordinates(indices[i])}+to:`;
     }
     destination += this.formatCoordinates(indices[indices.length - 1]);
-
-    debugger;
 
     this.launchNavigator.navigate(destination, options).then(
       success => console.log('Launched navigator'),

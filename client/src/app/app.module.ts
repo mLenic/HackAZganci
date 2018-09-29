@@ -23,7 +23,7 @@ import { Geolocation } from '@ionic-native/geolocation';
   declarations: [
     MyApp,
     HomePage,
-    MapsPage
+    MapsPage,
     FilterInitPage,
   ],
   imports: [
@@ -34,7 +34,7 @@ import { Geolocation } from '@ionic-native/geolocation';
   entryComponents: [
     MyApp,
     HomePage,
-    MapsPage
+    MapsPage,
     FilterInitPage
   ],
   providers: [
