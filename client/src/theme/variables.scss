@@ -86,3 +86,15 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+
+@font-face {
+  font-family: HKGrotesk-Bold;
+  src: url('../assets/fonts/HKGrotesk-Bold.otf');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: HKGrotesk-Light;
+  src: url('../assets/fonts/HKGrotesk-Light.otf');
+  font-weight: normal;
+}
