@@ -4,7 +4,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
-import { FilterInitPage } from '../pages/filter-init/filter-init';
+import { AudioPage } from '../pages/audioplayer/audioplayer';
 
 @Component({
   templateUrl: 'app.html'
@@ -21,4 +21,3 @@ export class MyApp {
     });
   }
 }
-
