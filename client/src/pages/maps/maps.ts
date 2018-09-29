@@ -18,8 +18,8 @@ export class MapsPage {
     public toastCtrl: ToastController,
     private launchNavigator: LaunchNavigator,
     private ngZone: NgZone,
-    private geoService: GeoService) {
-  }
+    private geoService: GeoService
+  ) { }
 
   ionViewDidLoad() {
     this.getGeoLocation();
@@ -27,29 +27,26 @@ export class MapsPage {
   }
 
   private getGeoLocation() {
-    this.geoService.getGeoObservable()
-        .subscribe((data) => {
-            this.ngZone.run(() => {
-              this.latitude = data.lat;
-              this.longitude = data.long;
-            });
-            let toast = this.toastCtrl.create({
-              message: "Latitude " + this.latitude + " Longitude: " + this.longitude,
-              duration: 1000,
-              position: 'top',
-            });
-            toast.present();
-        });
-
-    this.geoService.startWatchingGeolocation();
+    this.geoService.getGeoLocation().then((data) => {
+      this.ngZone.run(() => {
+        this.latitude = data['lat'];
+        this.longitude = data['long'];
+      });
+      let toast = this.toastCtrl.create({
+        message: "Got data " + this.longitude,
+        duration: 1000,
+        position: 'top',
+      });
+      toast.present();
+    });
   }
 
   private launchGoogleMaps() {
     const indices = this.randomArray(10, dediscina.length);
 
     let options: LaunchNavigatorOptions = {
-      start: `${this.latitude},${this.longitude}`,
-      app: 'google_maps'
+      start: this.formatCoordinates(indices[0]),//`${this.latitude},${this.longitude}`,
+      app: this.launchNavigator.APP.GOOGLE_MAPS
     };
 
     let destination = '';
@@ -59,8 +56,22 @@ export class MapsPage {
     destination += this.formatCoordinates(indices[indices.length - 1]);
 
     this.launchNavigator.navigate(destination, options).then(
-      success => console.log('Launched navigator'),
-      error => console.log('Error launching navigator', error)
+      success => {
+        let toast = this.toastCtrl.create({
+          message: 'google works',
+          duration: 1000,
+          position: 'top',
+        });
+        toast.present();
+      },
+      error => {
+        let toast = this.toastCtrl.create({
+          message: 'google not works',
+          duration: 1000,
+          position: 'top',
+        });
+        toast.present();
+      }
     );
   }
 
