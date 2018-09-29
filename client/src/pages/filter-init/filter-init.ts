@@ -9,7 +9,7 @@ import {Platform} from 'ionic-angular';
 export class FilterInitPage {
 
 	public questionCounter = 0;
-	public questionsNumber = 4;
+	public questionsNumber = 3;
 	public width = 0;
 	public offset = 0;
 	public progressBarUnit = 0;
@@ -19,6 +19,7 @@ export class FilterInitPage {
     platform.ready().then((readySource) => {
       this.width = platform.width();
       this.progressBarUnit = this.width / this.questionsNumber;
+      this.currentProgress = this.progressBarUnit;
       console.log('Width: ' + platform.width());
       console.log('Height: ' + platform.height());
     });
@@ -26,13 +27,14 @@ export class FilterInitPage {
 
   nextQuestion() {
   	this.questionCounter++;
-
+  	/*
   	if(this.questionCounter == this.questionNumber - 1) {
   		//redirect
   	}
+  	*/
 
-  	this.offset = this.width * this.questionCounter;
-  	this.currentProgress = this.progressBarUnit * this.questionCounter;
+  	this.offset = this.width * this.questionCounter + 100 * this.questionCounter;
+  	this.currentProgress += this.progressBarUnit;
   }
 
 }
