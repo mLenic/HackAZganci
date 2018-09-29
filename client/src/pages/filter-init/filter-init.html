@@ -5,18 +5,53 @@
 	<div class="questions-wrapper" [style.transform]="'translateX(-' + offset + 'px)'">
 		<div class="question-element-wrapper">
 			<div class="question-text">
-				How long do you want to travel?
+				Duration of your trip:
 			</div>
 			<div class="answer-wrapper">
 				<div class="buttons-wrapper">
-					<div class="button-answer-yes-no" (click)="nextQuestion()">
+					<div class="button-answer-50 vertical-content-button" (click)="nextQuestion()">
+						<img class="time-icon" src="../../assets/imgs/icon_morning.svg">
 						<div>
-						NO
+						MORNING
 						</div>
 					</div>
-					<div class="button-answer-yes-no" (click)="nextQuestion()">
+					<div class="button-answer-50 vertical-content-button" (click)="nextQuestion()">
+						<img class="time-icon" src="../../assets/imgs/icon_afternoon.svg">
 						<div>
-						YES
+						AFTERNOON
+						</div>
+					</div>
+					<div class="button-answer-100 vertical-content-button" (click)="nextQuestion()">
+						<img class="time-icon" src="../../assets/imgs/icon_all_day.svg">
+						<div>WHOLE DAY</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="question-element-wrapper">
+			<div class="question-text">
+				Prevozno sredstvo:
+			</div>
+			<div class="answer-wrapper">
+				<div class="buttons-wrapper">
+					<div class="button-answer-50" (click)="nextQuestion()">
+						<div>
+						<img class="button-img" src="../../assets/imgs/icon_bus.svg">
+						</div>
+					</div>
+					<div class="button-answer-50" (click)="nextQuestion()">
+						<div>
+						<img class="button-img" src="../../assets/imgs/icon_car.svg">
+						</div>
+					</div>
+					<div class="button-answer-50" (click)="nextQuestion()">
+						<div>
+						<img class="button-img" src="../../assets/imgs/icon_bike.svg">
+						</div>
+					</div>
+					<div class="button-answer-50" (click)="nextQuestion()">
+						<div>
+						<img class="button-img" src="../../assets/imgs/icon_shoe.svg">
 						</div>
 					</div>
 				</div>
@@ -24,18 +59,21 @@
 		</div>
 		<div class="question-element-wrapper">
 			<div class="question-text">
-				Do you travel by car?
+				How long do you want to travel?
 			</div>
 			<div class="answer-wrapper">
-				answer2
-			</div>
-		</div>
-		<div class="question-element-wrapper">
-			<div class="question-text">
-				Question text
-			</div>
-			<div class="answer-wrapper">
-				answer3
+				<div class="buttons-wrapper">
+					<div class="button-answer-50" (click)="nextQuestion()">
+						<div>
+						NO
+						</div>
+					</div>
+					<div class="button-answer-50" (click)="nextQuestion()">
+						<div>
+						YES
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
