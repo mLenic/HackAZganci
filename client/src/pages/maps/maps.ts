@@ -27,28 +27,25 @@ export class MapsPage {
   }
 
   private getGeoLocation() {
-    this.geoService.getGeoObservable()
-        .subscribe((data) => {
-            this.ngZone.run(() => {
-              this.latitude = data.lat;
-              this.longitude = data.long;
-            });
-            let toast = this.toastCtrl.create({
-              message: "Latitude " + this.latitude + " Longitude: " + this.longitude,
-              duration: 1000,
-              position: 'top',
-            });
-            toast.present();
-        });
-
-    this.geoService.startWatchingGeolocation();
+    this.geoService.getGeoLocation().then((data) => {
+      this.ngZone.run(() => {
+        this.latitude = data['lat'];
+        this.longitude = data['long'];
+      });
+      let toast = this.toastCtrl.create({
+        message: "Got data " + this.longitude,
+        duration: 1000,
+        position: 'top',
+      });
+      toast.present();
+    });
   }
 
   private launchGoogleMaps() {
     const indices = this.randomArray(10, dediscina.length);
 
     let options: LaunchNavigatorOptions = {
-      start: `${this.latitude},${this.longitude}`,
+      start: `${this.formatCoordinates(indices[0])},${this.formatCoordinates(indices[0])}`,
       app: 'google_maps'
     };
 

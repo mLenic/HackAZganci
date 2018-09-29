@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 
 import { FilterInitPage } from '../filter-init/filter-init';
 import { MapsPage } from '../maps/maps';
+import { QRCodePage } from '../qrcode/qrcode';
 
 @Component({
   selector: 'page-home',
@@ -20,11 +21,12 @@ export class HomePage {
   }
 
   public goToFilter(){
-    this.navCtrl.push(FilterInitPage);
+    this.navCtrl.push(QRCodePage);
   }
 
   public goToMaps() {
     this.navCtrl.push(MapsPage);
   }
+
 
 }

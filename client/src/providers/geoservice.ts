@@ -15,6 +15,25 @@ export class GeoService {
         return this.geoSubject;
     }
     
+    public getGeoLocation() {
+        return new Promise((resolve, reject) => {
+            this.geolocation.getCurrentPosition().then((resp) => {
+                if(resp && resp['code'] != 1) {
+                    console.log(resp);
+                    var dtx = {
+                        lat: resp.coords.latitude,
+                        long: resp.coords.longitude,
+                    }
+                    resolve(dtx);
+                }
+            }).catch((error) => {
+                reject('error');
+                console.log('Error getting location', error);
+            });
+        });
+        
+    }
+
     public startWatchingGeolocation() {
         let watch = this.geolocation.watchPosition();
         watch.subscribe((data) => {
