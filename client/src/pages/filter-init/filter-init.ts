@@ -7,8 +7,15 @@ import { NavController } from 'ionic-angular';
 })
 export class FilterInitPage {
 
+	public questionCounter = 0
+	public questionsNumber = 4
+
   constructor(public navCtrl: NavController) {
 
+  }
+
+  ngOnInit() {
+  	this.innerWidth = window.innerWidth;
   }
 
 }
