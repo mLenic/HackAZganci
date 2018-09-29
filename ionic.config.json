@@ -1,0 +1,7 @@
+{
+  "name": "HackAZganci",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
