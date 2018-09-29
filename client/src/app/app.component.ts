@@ -3,14 +3,16 @@ import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { HomePage } from '../pages/home/home';
-import { AudioPage } from '../pages/audioplayer/audioplayer';
+import { HomePage }       from '../pages/home/home';
+import { AudioPage }      from '../pages/audioplayer/audioplayer';
+import { FilterInitPage } from '../pages/filter-init/filter-init';
+import { DashboardPage }  from '../pages/dashboard/dashboard';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = FilterInitPage;
+  rootPage:any = DashboardPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

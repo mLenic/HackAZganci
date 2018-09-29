@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import {Platform} from 'ionic-angular';
+import { Platform} from 'ionic-angular';
+import { DashboardPage } from '../dashboard/dashboard';
 
 @Component({
   selector: 'page-filter-init',
@@ -32,6 +33,11 @@ export class FilterInitPage {
   		//redirect
   	}
   	*/
+    
+    
+    if(this.questionCounter == this.questionsNumber) {
+        this.navCtrl.push(DashboardPage);
+    }
 
   	this.offset = this.width * this.questionCounter + 100 * this.questionCounter;
   	this.currentProgress += this.progressBarUnit;

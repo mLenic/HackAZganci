@@ -13,7 +13,7 @@ import { FilterInitPage } from '../pages/filter-init/filter-init';
 import { MapsPage } from '../pages/maps/maps';
 import { QRCodePage } from '../pages/qrcode/qrcode';
 import { AudioPage } from '../pages/audioplayer/audioplayer';
-
+import { DashboardPage } from '../pages/dashboard/dashboard';
 
 // Providers
 import { HttpReq }      from '../providers/http-req';
@@ -33,7 +33,8 @@ import { AndroidPermissions } from '@ionic-native/android-permissions';
     MapsPage,
     AudioPage,
     FilterInitPage,
-    QRCodePage
+    QRCodePage,
+    DashboardPage
   ],
   imports: [
     BrowserModule,
@@ -45,8 +46,9 @@ import { AndroidPermissions } from '@ionic-native/android-permissions';
     HomePage,
     MapsPage,
     FilterInitPage,
-    AudioPage
-    QRCodePage
+    AudioPage,
+    QRCodePage,
+    DashboardPage
   ],
   providers: [
     LaunchNavigator,
@@ -57,7 +59,6 @@ import { AndroidPermissions } from '@ionic-native/android-permissions';
     GeoService,
     Filter,
     NativeAudio,
-    Geolocation
     Geolocation,
     QRScanner,
     AndroidPermissions
