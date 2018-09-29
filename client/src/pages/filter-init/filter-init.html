@@ -1,16 +1,25 @@
 <div class="header">
-	<div class="logo-wrapper">
-		LOGO
-	</div>
+	<img class="logo-img" src="../../assets/imgs/logo_medium_light.svg">
 </div>
 <div class="content-wrapper">
-	<div class="questions-wrapper">
+	<div class="questions-wrapper" [style.transform]="'translateX(-' + offset + 'px)'">
 		<div class="question-element-wrapper">
 			<div class="question-text">
 				How long do you want to travel?
 			</div>
 			<div class="answer-wrapper">
-				answer
+				<div class="buttons-wrapper">
+					<div class="button-answer-yes-no" (click)="nextQuestion()">
+						<div>
+						NO
+						</div>
+					</div>
+					<div class="button-answer-yes-no" (click)="nextQuestion()">
+						<div>
+						YES
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="question-element-wrapper">
@@ -31,7 +40,7 @@
 		</div>
 	</div>
 	<div class="progress-bar-wrapper">
-		<div class="progress-done">
+		<div class="progress-done" [style.width]="currentProgress + 'px'">
 
 		</div>
 	</div>
