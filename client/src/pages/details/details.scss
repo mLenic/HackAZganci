@@ -1,0 +1,34 @@
+.top-banner {
+    background-color: #247F6E;
+    width: 100%;
+    height: 30%;
+    text-align: center;
+    position: relative;
+
+    .close-icon {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+    }
+    .title {
+        position: absolute;
+        bottom: 10px;
+        width: 100%;
+        color: #F3D2B7;
+        font-size: 25px;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+}
+
+.content {
+    background-color: #F3D2B7;
+    width: 100%;
+    height: 40%;
+}
+
+.bottom-banner {
+    background-color: #247F6E;
+    width: 100%;
+    height: 30%;
+}

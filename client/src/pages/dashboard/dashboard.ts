@@ -11,7 +11,9 @@ import { ListComponent } from '../../components/list-component';
 export class DashboardPage {
     
     public loadingTimeMs = 3000;
-    public showLoader = false;
+    public showLoader = true;
+
+    
 
     constructor(public navCtrl: NavController){
 
@@ -22,4 +24,11 @@ export class DashboardPage {
         }, this.loadingTimeMs);
     }
 
+    /** Objects */
+    public heritage1 = {
+        title: 'Rudnik zivega srebra - Idrija',
+        description: 'Zelo zanimiv rudnik.',
+        time1: '9.00',
+        time2: '19:00',
+    }
 }

@@ -14,6 +14,7 @@ import { MapsPage } from '../pages/maps/maps';
 import { QRCodePage } from '../pages/qrcode/qrcode';
 import { AudioPage } from '../pages/audioplayer/audioplayer';
 import { DashboardPage } from '../pages/dashboard/dashboard';
+import { DetailsPage } from '../pages/details/details';
 
 // Components
 import { ListComponent } from '../components/list-component';
@@ -38,7 +39,8 @@ import { AndroidPermissions } from '@ionic-native/android-permissions';
     FilterInitPage,
     QRCodePage,
     DashboardPage,
-    ListComponent
+    ListComponent,
+    DetailsPage
   ],
   imports: [
     BrowserModule,
@@ -53,7 +55,8 @@ import { AndroidPermissions } from '@ionic-native/android-permissions';
     AudioPage,
     QRCodePage,
     DashboardPage,
-    ListComponent
+    ListComponent,
+    DetailsPage
   ],
   providers: [
     LaunchNavigator,
