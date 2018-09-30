@@ -12,6 +12,8 @@ export class MapsPage {
 
   public latitude: number;
   public longitude: number;
+  public loadingTimeMs = 2500;
+  public showLoader = true;
 
   constructor(
     public navCtrl: NavController,
@@ -22,8 +24,11 @@ export class MapsPage {
   ) { }
 
   ionViewDidLoad() {
-    this.getGeoLocation();
-    this.launchGoogleMaps();
+    // this.getGeoLocation();
+    // this.launchGoogleMaps();
+    setTimeout(() => {
+        this.showLoader = false;
+    }, this.loadingTimeMs);
   }
 
   private getGeoLocation() {
