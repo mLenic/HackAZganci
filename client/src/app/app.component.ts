@@ -14,7 +14,7 @@ import { QRCodePage } from '../pages/qrcode/qrcode';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = DashboardPage;
+  rootPage:any = HomePage;
 
   constructor(
     platform: Platform,
@@ -25,7 +25,7 @@ export class MyApp {
     platform.ready().then(() => {
       statusBar.styleDefault();
       splashScreen.hide();
-      this.nativeAudio.preloadSimple('uniqueId1', 'assets/sounds/kazina.wav');
+      this.nativeAudio.preloadSimple('uniqueId1', 'assets/sounds/kazina.mp3');
     });
   }
 }

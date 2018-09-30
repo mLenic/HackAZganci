@@ -39,7 +39,7 @@ export class QRCodePage {
               if(ctx == 0) {
                 this.navCtrl.push(DetailsPage, {"heritage": this.heritage2});
               } else {
-                this.navCtrl.push(DetailsPage, {"heritage": this.heritage3});
+                this.navCtrl.push(DetailsPage, {"heritage": this.heritage2});
               }
               ctx += 1;
               this.filter.setCnt(ctx);
@@ -73,12 +73,14 @@ export class QRCodePage {
 
   /** Objects */
   public heritage2 = {
-    title: 'Rudnik zivega srebra - Idrija',
-    description: 'Zelo zanimiv rudnik.',
-    time1: '9.00',
-    time2: '19:00',
+    title: 'Palača Kazina',
+    description: 'Večnamenska javna palača, zgrajena 1835-1837 pod vodstvom V. Vadnava, je strogo klasicistična arhitektura, ki odraža racionalizem 1. polovice 19. stol. Krasitvena dela v dvorani iz 19. stol. dopolnjujejo interierji v slogu funkcionalizma.',
+    time1: '10:45',
+    time2: '11:45',
     sound: 'uniqueId1',
-  }
+    image: '../../assets/imgs/icon_castle.svg',
+    largeImage: '../../assets/imgs/kazina.jpg'
+};
 
   /** Objects */
   public heritage3 = {
