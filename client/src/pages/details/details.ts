@@ -4,6 +4,7 @@ import { Platform, ToastController } from 'ionic-angular';
 import { NativeAudio } from '@ionic-native/native-audio';
 
 import { QRCodePage } from '../qrcode/qrcode';
+import { DashboardPage } from '../dashboard/dashboard';
 
 @Component({
   selector: 'page-details',
@@ -26,7 +27,7 @@ export class DetailsPage {
     }
 
     public close() {
-        this.navController.pop();
+        this.navController.setRoot(DashboardPage)
     }
 
     public playText() {
