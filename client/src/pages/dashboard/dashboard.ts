@@ -30,5 +30,6 @@ export class DashboardPage {
         description: 'Zelo zanimiv rudnik.',
         time1: '9.00',
         time2: '19:00',
+        sound: 'uniqueId1',
     }
 }

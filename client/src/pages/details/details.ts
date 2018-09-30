@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { Platform} from 'ionic-angular';
+import { Platform, ToastController } from 'ionic-angular';
 import { NativeAudio } from '@ionic-native/native-audio';
 
 @Component({
@@ -14,6 +14,7 @@ export class DetailsPage {
     constructor(
         public navController: NavController,
         public navParams: NavParams,
+        public toastCtrl: ToastController,
         private nativeAudio: NativeAudio) 
     {
         if(this.navParams.get('heritage')){
@@ -28,6 +29,16 @@ export class DetailsPage {
 
     public playText() {
         console.log("was clicked");
-        this.nativeAudio.play('uniqueId1');
+        if(this.object){
+            this.nativeAudio.play(this.object.sound);
+        } else {
+            let toast = this.toastCtrl.create({
+                message: "This Heritage site does not have a detailed audio description.",
+                duration: 2000,
+                position: 'bottom',
+              });
+              toast.present();
+        }
+        
     }
 }
