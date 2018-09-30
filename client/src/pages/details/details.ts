@@ -40,4 +40,8 @@ export class DetailsPage {
       toast.present();
     }
   }
+
+  ionViewWillLeave() {
+    this.nativeAudio.stop(this.object.sound);
+  }
 }

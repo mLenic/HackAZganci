@@ -5,11 +5,11 @@
 </div>
 
 <div class="content">
-  <img *ngIf="object" [src]="object.largeImage"/>
+  <img *ngIf="object && object.largeImage" [src]="object.largeImage"/>
 </div>
 
 <div class="bottom-banner">
-  <div class="play-text" (click)="playText()">
+  <div *ngIf="object && object.sound" class="play-text" (click)="playText()">
     <img src="../../assets/imgs/ikona-play.png" class="play-icon"/>
   </div>
   <div class="play-description">
