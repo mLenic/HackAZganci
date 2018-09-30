@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { Platform, ToastController } from 'ionic-angular';
 import { NativeAudio } from '@ionic-native/native-audio';
 
+import { DashboardPage } from '../dashboard/dashboard';
 import { QRCodePage } from '../qrcode/qrcode';
 
 @Component({
@@ -10,41 +11,38 @@ import { QRCodePage } from '../qrcode/qrcode';
   templateUrl: 'details.html'
 })
 export class DetailsPage {
-    
-    public object;
 
-    constructor(
-        public navController: NavController,
-        public navParams: NavParams,
-        public toastCtrl: ToastController,
-        private nativeAudio: NativeAudio) 
-    {
-        if(this.navParams.get('heritage')){
-            this.object = this.navParams.get('heritage');
-        }
+  public object;
 
+  constructor(
+    public navController: NavController,
+    public navParams: NavParams,
+    public toastCtrl: ToastController,
+    private nativeAudio: NativeAudio
+    ) {
+    if (this.navParams.get('heritage')) {
+      this.object = this.navParams.get('heritage');
     }
+  }
 
-    public close() {
-        this.navController.pop();
-    }
+  public close() {
+    this.navController.setRoot(DashboardPage)
+  }
 
-    public playText() {
-        console.log("was clicked");
-        if(this.object){
-            this.nativeAudio.play(this.object.sound);
-        } else {
-            let toast = this.toastCtrl.create({
-                message: "This Heritage site does not have a detailed audio description.",
-                duration: 2000,
-                position: 'bottom',
-              });
-              toast.present();
-        }
-        
+  public playText() {
+    if (this.object) {
+      this.nativeAudio.play(this.object.sound);
+    } else {
+      let toast = this.toastCtrl.create({
+        message: "This Heritage site does not have a detailed audio description.",
+        duration: 2000,
+        position: 'bottom',
+      });
+      toast.present();
     }
+  }
 
-    public showQR() {
-        this.navController.push(QRCodePage);
-    }
+  public showQR() {
+    this.navController.push(QRCodePage);
+  }
 }
