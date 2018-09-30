@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Platform} from 'ionic-angular';
+import { NativeAudio } from '@ionic-native/native-audio';
 
 @Component({
   selector: 'page-details',
@@ -12,7 +13,8 @@ export class DetailsPage {
 
     constructor(
         public navController: NavController,
-        public navParams: NavParams) 
+        public navParams: NavParams,
+        private nativeAudio: NativeAudio) 
     {
         if(this.navParams.get('heritage')){
             this.object = this.navParams.get('heritage');
@@ -22,5 +24,10 @@ export class DetailsPage {
 
     public close() {
         this.navController.pop();
+    }
+
+    public playText() {
+        console.log("was clicked");
+        this.nativeAudio.play('uniqueId1');
     }
 }

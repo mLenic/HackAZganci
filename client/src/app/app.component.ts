@@ -27,7 +27,7 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
-      this.nativeAudio.preloadSimple('uniqueId1', 'assets/kazina.wav');
+      this.nativeAudio.preloadSimple('uniqueId1', 'assets/sounds/fails.wav');
     });
   }
 }
