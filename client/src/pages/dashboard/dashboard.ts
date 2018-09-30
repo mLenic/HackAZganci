@@ -26,10 +26,9 @@ export class DashboardPage {
     }
     ionViewDidLoad() {
       this.counter = this.filter.getHomeCnt();
-      console.log(this.counter);
-        setTimeout(() => {
-            this.showLoader = false;
-        }, this.loadingTimeMs);
+      setTimeout(() => {
+          this.showLoader = false;
+      }, this.loadingTimeMs);
     }
 
   public goToHome() {
