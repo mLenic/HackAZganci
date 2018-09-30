@@ -1,4 +1,4 @@
 <div class="maps-page">
   <img class="spin-img" *ngIf="showLoader" src="../../assets/imgs/spinner.svg"/>
-  <img *ngIf="!showLoader" class="map" src="../../assets/imgs/maps.png"/>
+  <img *ngIf="!showLoader" class="map" [src]="image"/>
 </div>

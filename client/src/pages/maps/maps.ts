@@ -1,6 +1,8 @@
 import { Component, NgZone } from '@angular/core';
 import { NavController, ToastController } from 'ionic-angular';
 import { LaunchNavigator, LaunchNavigatorOptions } from '@ionic-native/launch-navigator';
+
+import { Filter } from '../../providers/filter';
 import { GeoService } from '../../providers/geoservice';
 import { dediscina } from '../../assets/data/dediscina';
 
@@ -14,18 +16,24 @@ export class MapsPage {
   public longitude: number;
   public loadingTimeMs = 2500;
   public showLoader = true;
+  public image = '';
+  public counter = 0;
 
   constructor(
     public navCtrl: NavController,
     public toastCtrl: ToastController,
     private launchNavigator: LaunchNavigator,
     private ngZone: NgZone,
-    private geoService: GeoService
+    private geoService: GeoService,
+    public filter: Filter
   ) { }
 
   ionViewDidLoad() {
     // this.getGeoLocation();
     // this.launchGoogleMaps();
+
+    this.counter = this.filter.getHomeCnt();
+    this.image = this.counter === 0 ? '../../assets/imgs/maps.png' : '../../assets/imgs/maps2.png';
     setTimeout(() => {
         this.showLoader = false;
     }, this.loadingTimeMs);
