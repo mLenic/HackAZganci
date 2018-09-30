@@ -9,12 +9,14 @@ import { DashboardPage } from '../dashboard/dashboard';
   templateUrl: 'qrcode.html'
 })
 export class QRCodePage {
-  
+
   public scanSub: any;
 
-  constructor(public navCtrl: NavController,
-              public androidPermissions: AndroidPermissions,
-              public qrScanner: QRScanner) {
+  constructor(
+    public navCtrl: NavController,
+    public androidPermissions: AndroidPermissions,
+    public qrScanner: QRScanner
+  ) {
     this.qrScanner = qrScanner;
     this.scanqr();
   }
@@ -46,10 +48,9 @@ export class QRCodePage {
       })
       .catch((e: any) => console.log('Error is', e));
   }
-  
+
   ionViewCanLeave() {
     window.document.querySelector('body').classList.remove('transparent-body');
-    
     this.qrScanner.destroy();
   }
 

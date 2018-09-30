@@ -21,7 +21,7 @@ export class HomePage {
   }
 
   public goToFilter(){
-    this.navCtrl.push(QRCodePage);
+    this.navCtrl.push(FilterInitPage);
   }
 
   public goToMaps() {

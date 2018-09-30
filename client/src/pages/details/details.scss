@@ -1,41 +1,44 @@
 .top-banner {
-    background-color: #247F6E;
-    width: 100%;
-    height: 30%;
-    text-align: center;
-    position: relative;
+  background-color: #247F6E;
+  width: 100%;
+  height: 24%;
+  text-align: center;
+  position: relative;
 
-    .close-icon {
-        position: absolute;
-        top: 15px;
-        right: 15px;
-    }
-    .title {
-        position: absolute;
-        bottom: 10px;
-        width: 100%;
-        color: #F3D2B7;
-        font-size: 25px;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
+  .close-icon {
+    position: absolute;
+    top: 20px;
+    right: 15px;
+  }
+  .title {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    color: #FFCCCC;
+    font-size: 25px;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
 }
 
 .content {
-    background-color: #F3D2B7;
-    width: 100%;
-    height: 40%;
+  width: 100%;
+  background-color: #247F6E;
+  height: 100%;
+  padding-top: 20px;
 }
 
 .bottom-banner {
-    background-color: #247F6E;
-    width: 100%;
-    height: 30%;
+  position: absolute;
+  bottom: 0;
+  background-color: #247F6E;
+  width: 100%;
+  min-height: 30%;
 }
 
 .play-icon {
-    position: absolute;
-    padding-top: 20px;
-    width: 20%;
-    left: 40%;
+  position: absolute;
+  padding-top: 20px;
+  width: 20%;
+  left: 40%;
 }

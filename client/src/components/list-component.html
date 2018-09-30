@@ -1,17 +1,16 @@
 <div class="list-comp-wrapper" (click)="displayDetails(object)">
-    <div class="list-logo">
-        <div class="line" [ngClass]="[isFirst ? 'top-line' : '', isLast ? 'bottom-line' : '']"></div>
-        <div class="circle"></div>
+  <div class="list-logo">
+    <div class="line" [ngClass]="[isFirst ? 'top-line' : '', isLast ? 'bottom-line' : '']"></div>
+    <div class="circle"></div>
+  </div>
+  <div class="list-text">
+    <div *ngIf="!object" class="text">
+      <h2>Postonjska jama</h2>
+      <p>9:00 - 13:00</p>
     </div>
-    <div class="list-text">
-        <div *ngIf="!object" class="text">
-            <h2>Postonjska jama</h2>
-            <p>9:00 - 13:00</p>
-        </div>
-        <div *ngIf="object" class="text">
-                <h2>{{object.title}}</h2>
-                <p>{{object.time1}} - {{object.time2}}</p>
-        </div>
+    <div *ngIf="object" class="text">
+      <h2>{{object.title}}</h2>
+      <p>{{object.time1}} - {{object.time2}}</p>
     </div>
-    
+  </div>
 </div>
