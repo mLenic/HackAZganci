@@ -10,14 +10,13 @@ import { DetailsPage } from '../pages/details/details';
 })
 export class ListComponent {
 
-    constructor(public navController: NavController) {}
+  constructor(public navController: NavController) {}
 
-    @Input() isFirst: Boolean = false;
-    @Input() isLast: Boolean = false;
-    
-    @Input() object: any;
+  @Input() isFirst: Boolean = false;
+  @Input() isLast: Boolean = false;
+  @Input() object: any;
 
-    public displayDetails(object: any) {
-        this.navController.push(DetailsPage, {'heritage': object});
-    }
+  public displayDetails(object: any) {
+    this.navController.push(DetailsPage, {'heritage': object});
+  }
 }

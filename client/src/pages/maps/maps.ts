@@ -2,7 +2,7 @@ import { Component, NgZone } from '@angular/core';
 import { NavController, ToastController } from 'ionic-angular';
 import { LaunchNavigator, LaunchNavigatorOptions } from '@ionic-native/launch-navigator';
 import { GeoService } from '../../providers/geoservice';
-import { dediscina } from '../../data/dediscina';
+import { dediscina } from '../../assets/data/dediscina';
 
 @Component({
   selector: 'page-maps',

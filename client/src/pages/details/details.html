@@ -1,18 +1,18 @@
 <div class="top-banner">
-    <img src="../../assets/imgs/icon_close.png" class="close-icon" (click)="close()">
-    <h1 class="title" *ngIf="!object">Postonjska jama</h1>
-    <h1 class="title" *ngIf="object">{{object.title}}</h1>
+  <img src="../../assets/imgs/icon_close.png" class="close-icon" (click)="close()">
+  <h1 class="title" *ngIf="!object">Postonjska jama</h1>
+  <h1 class="title" *ngIf="object">{{object.title}}</h1>
 </div>
 
 <div class="content">
-
+  <img src="../../assets/imgs/cerkev.jpg"/>
 </div>
 
 <div class="bottom-banner">
-    <div class="play-text" (click)="playText()">
-        <img src="../../assets/imgs/ikona-play.png" class="play-icon"/>
-    </div>
-    <div (click)="showQR()">
-        Show QR (Testno)
-    </div>
+  <div class="play-text" (click)="playText()">
+    <img src="../../assets/imgs/ikona-play.png" class="play-icon"/>
+  </div>
+  <div (click)="showQR()">
+    Show QR (Testno)
+  </div>
 </div>

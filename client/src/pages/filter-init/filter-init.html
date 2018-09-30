@@ -30,7 +30,7 @@
 		</div>
 		<div class="question-element-wrapper">
 			<div class="question-text">
-				Prevozno sredstvo:
+				Travelling by:
 			</div>
 			<div class="answer-wrapper">
 				<div class="buttons-wrapper">
@@ -57,9 +57,9 @@
 				</div>
 			</div>
 		</div>
-		<div class="question-element-wrapper">
-			<div class="question-text">
-				How long do you want to travel?
+		<div class="question-element-wrapper" *ngFor="let image of images">
+			<div class="question-image">
+				<img [src]="'../../assets/imgs/' + image + '.jpg'"/>
 			</div>
 			<div class="answer-wrapper">
 				<div class="buttons-wrapper">
