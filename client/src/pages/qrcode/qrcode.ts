@@ -3,18 +3,20 @@ import { NavController } from 'ionic-angular';
 import { AndroidPermissions } from '@ionic-native/android-permissions';
 import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner';
 
-
+import { DashboardPage } from '../dashboard/dashboard';
 @Component({
   selector: 'page-qr',
   templateUrl: 'qrcode.html'
 })
 export class QRCodePage {
+  
+  public scanSub: any;
 
   constructor(public navCtrl: NavController,
               public androidPermissions: AndroidPermissions,
               public qrScanner: QRScanner) {
     this.qrScanner = qrScanner;
-    //scanQr()
+    this.scanqr();
   }
 
   scanqr() {
@@ -24,11 +26,11 @@ export class QRCodePage {
            // camera permission was granted
 
            // start scanning
-           let scanSub = this.qrScanner.scan().subscribe((text: string) => {
+           this.scanSub = this.qrScanner.scan().subscribe((text: string) => {
              console.log('Scanned something', text);
 
              this.qrScanner.hide(); // hide camera preview
-             scanSub.unsubscribe(); // stop scanning
+             this.scanSub.unsubscribe(); // stop scanning
            });
 
            this.qrScanner.resumePreview();
@@ -44,45 +46,15 @@ export class QRCodePage {
       })
       .catch((e: any) => console.log('Error is', e));
   }
+  
+  ionViewCanLeave() {
+    window.document.querySelector('body').classList.remove('transparent-body');
+    
+    this.qrScanner.destroy();
+  }
 
-
-  // scanQr() {
-  //     this.qrScanner.prepare()
-  //       .then((status: QRScannerStatus) => {
-  //         if (status.authorized) {
-  //           let scanSub = this.qrScanner.scan().subscribe((text: string) => {
-  //             if (text) {
-  //               scanSub.unsubscribe();
-  //               this.participantService.join(text).then((response: any) => {
-  //                 this.qrCodeService.addQrValues(text);
-  //                 this.events.publish('QrScanFinish', response);
-  //                 this.qrScanner.hide();
-  //                 if(this.navCtrl) {
-  //                   this.navCtrl.removeView(this.navCtrl.getActive());
-  //                 }
-  //                 window.document.querySelector('body').classList.add('transparent-body');
-  //                 if (response.stat == Constants.OK) {
-  //                   this.navCtrl.push(ChallengeDetailsPage, {challengeId: response.participant.chal_id});
-  //                 } else {
-  //                   let toast = this.toastCtrl.create({
-  //                     message: "Something went wrong.",
-  //                     duration: 3000
-  //                   });
-  //                   toast.present();
-  //                 }
-  //
-  //               });
-  //             }
-  //             else {
-  //               this.qrScanner.destroy();
-  //             }
-  //           });
-  //           this.qrScanner.show();
-  //         } else if (status.denied) {
-  //           this.navCtrl.setRoot(ChallengesListPage);
-  //         }
-  //       })
-  //       .catch((e: any) => console.log('Error is', e));
-  //   }
-
+  public close(){
+    console.log("Called this");
+    this.navCtrl.pop();
+  }
 }

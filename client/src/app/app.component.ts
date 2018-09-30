@@ -4,10 +4,10 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage }       from '../pages/home/home';
-import { AudioPage }      from '../pages/audioplayer/audioplayer';
 import { FilterInitPage } from '../pages/filter-init/filter-init';
 import { DashboardPage }  from '../pages/dashboard/dashboard';
 import { DetailsPage }    from '../pages/details/details';
+import { QRCodePage }     from '../pages/qrcode/qrcode';
 
 import { NativeAudio } from '@ionic-native/native-audio';
 

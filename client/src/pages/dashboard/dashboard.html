@@ -3,7 +3,7 @@
         <img class="logo-img" src="../../assets/imgs/logo_orange.svg">
     </div>
     
-    <img class="spin-img" *ngIf="showLoader" src="../../assets//imgs/spinner.svg"/>
+    <img class="spin-img" *ngIf="showLoader" src="../../assets/imgs/spinner.svg"/>
     <div *ngIf="!showLoader">
         <list-component [isFirst]="true"></list-component>
         <list-component [object]="heritage1"></list-component>

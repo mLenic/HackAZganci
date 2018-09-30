@@ -1,21 +1,5 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
+<div class="qr-top">
+    <img src="../../assets/imgs/icon_close.png" class="close-icon" (click)="close()">
+</div>
 
-<ion-content padding>
-  <button ion-button color="primary" (click)="scanqr()">
-    <ion-row>
-              <ion-col style="max-width:40px;margin-top:-8px">
-              <ion-icon item-start name="qr-scanner">
-                </ion-icon>
-              </ion-col>
-              <ion-col style="margin-top:-8px">
-                Access to a place
-              </ion-col>
-            </ion-row>
-  </button>
-</ion-content>
+<div class="qr-bottom"></div>

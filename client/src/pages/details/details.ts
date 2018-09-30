@@ -3,6 +3,8 @@ import { NavController, NavParams } from 'ionic-angular';
 import { Platform, ToastController } from 'ionic-angular';
 import { NativeAudio } from '@ionic-native/native-audio';
 
+import { QRCodePage } from '../qrcode/qrcode';
+
 @Component({
   selector: 'page-details',
   templateUrl: 'details.html'
@@ -40,5 +42,9 @@ export class DetailsPage {
               toast.present();
         }
         
+    }
+
+    public showQR() {
+        this.navController.push(QRCodePage);
     }
 }

@@ -1,3 +1,33 @@
-page-qr {
+ion-content,body, .app-root, ion-app, ion-nav, .ion-page, .scroll-content,.fixed-content,page-app, {
+    background: none transparent !important;
+}
 
+page-qr {
+    
+
+    
+
+    .qr-top {
+        position: absolute;
+        height: 30%;
+        width: 100%;
+        top: 0;
+        z-index: 101;
+        background-color: #247F6E;
+        
+    }
+    .close-icon {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+    }
+
+    .qr-bottom {
+        position: absolute;
+        height: 30%;
+        width: 100%;
+        bottom: 0;
+        z-index: 101;
+        background-color: #F3D2B7;
+    }
 }

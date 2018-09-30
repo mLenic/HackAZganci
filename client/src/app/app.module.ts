@@ -12,7 +12,6 @@ import { HomePage }   from '../pages/home/home';
 import { FilterInitPage } from '../pages/filter-init/filter-init';
 import { MapsPage } from '../pages/maps/maps';
 import { QRCodePage } from '../pages/qrcode/qrcode';
-import { AudioPage } from '../pages/audioplayer/audioplayer';
 import { DashboardPage } from '../pages/dashboard/dashboard';
 import { DetailsPage } from '../pages/details/details';
 
@@ -35,7 +34,6 @@ import { AndroidPermissions } from '@ionic-native/android-permissions';
     MyApp,
     HomePage,
     MapsPage,
-    AudioPage,
     FilterInitPage,
     QRCodePage,
     DashboardPage,
@@ -52,7 +50,6 @@ import { AndroidPermissions } from '@ionic-native/android-permissions';
     HomePage,
     MapsPage,
     FilterInitPage,
-    AudioPage,
     QRCodePage,
     DashboardPage,
     ListComponent,
