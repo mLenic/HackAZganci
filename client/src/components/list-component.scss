@@ -64,11 +64,9 @@
   }
 
   .circle {
-    background: url("../assets/imgs/icon_nature.svg") no-repeat center;
-    background-size: contain;
+    background-color: #247F6E;
     height: 65px;
     width: 65px;
-    background-color: #247F6E;
     border-radius: 50%;
     position: absolute;
     top: 0;
@@ -76,5 +74,16 @@
     left: 0;
     right: 0;
     margin: auto;
+  }
+
+  .image {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 35%;
+    height: 35%;
   }
 }
