@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import { Platform } from 'ionic-angular';
 
 import { ListComponent } from '../../components/list-component';
+import { Filter } from '../../providers/filter';
 
 @Component({
   selector: 'page-dashboard',
@@ -13,9 +14,11 @@ export class DashboardPage {
     public loadingTimeMs = 3000;
     public showLoader = true;
 
-    
 
-    constructor(public navCtrl: NavController){
+
+    constructor(
+        public navCtrl: NavController,
+        public filter: Filter){
 
     }
     ionViewDidLoad() {
@@ -24,12 +27,15 @@ export class DashboardPage {
         }, this.loadingTimeMs);
     }
 
-    /** Objects */
-    public heritage1 = {
-        title: 'Rudnik zivega srebra - Idrija',
-        description: 'Zelo zanimiv rudnik.',
-        time1: '9.00',
-        time2: '19:00',
-        sound: 'uniqueId1',
-    }
+    public arrayScenario1 = [
+        
+        {
+            title: 'Rudnik zivega srebra - Idrija',
+            description: 'Zelo zanimiv rudnik.',
+            time1: '9.00',
+            time2: '19:00',
+            sound: 'uniqueId1',
+        }
+    ];
+    
 }

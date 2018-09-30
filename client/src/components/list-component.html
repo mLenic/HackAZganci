@@ -10,7 +10,8 @@
         </div>
         <div *ngIf="object" class="text">
                 <h2>{{object.title}}</h2>
-                <p>{{object.time1}} - {{object.time2}}</p>
+                <p *ngIf="object.time1 && object.time2">{{object.time1}} - {{object.time2}}</p>
+                <p *ngIf="!object.time2">{{object.time1}} </p>
         </div>
     </div>
     
