@@ -20,10 +20,10 @@ page-qr {
 
   .qr-bottom {
     position: absolute;
-    height: 30%;
+    min-height: 30%;
     width: 100%;
     bottom: 0;
     z-index: 101;
-    background-color: #F3D2B7;
+    background-color: #247F6E;
   }
 }

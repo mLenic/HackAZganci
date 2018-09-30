@@ -3,7 +3,9 @@ import { NavController } from 'ionic-angular';
 import { Platform } from 'ionic-angular';
 
 import { ListComponent } from '../../components/list-component';
+import { HomePage } from '../home/home';
 import { MapsPage } from '../maps/maps';
+import { QRCodePage } from '../qrcode/qrcode';
 
 @Component({
   selector: 'page-dashboard',
@@ -24,8 +26,16 @@ export class DashboardPage {
     }, this.loadingTimeMs);
   }
 
+  public goToHome() {
+    this.navCtrl.push(HomePage);
+  }
+
   public openMaps() {
     this.navCtrl.push(MapsPage);
+  }
+
+  public showQR() {
+    this.navCtrl.push(QRCodePage);
   }
 
   /** Objects */

@@ -5,12 +5,16 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { NativeAudio } from '@ionic-native/native-audio';
 
 import { HomePage } from '../pages/home/home';
+import { FilterInitPage } from '../pages/filter-init/filter-init';
+import { DashboardPage } from '../pages/dashboard/dashboard';
+import { DetailsPage } from '../pages/details/details';
+import { QRCodePage } from '../pages/qrcode/qrcode';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = HomePage;
+  rootPage:any = DashboardPage;
 
   constructor(
     platform: Platform,

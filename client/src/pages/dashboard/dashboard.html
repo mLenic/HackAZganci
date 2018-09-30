@@ -1,6 +1,6 @@
 <div class="content-wrapper-db">
   <div class="header-bg">
-    <img class="logo-img" src="../../assets/imgs/logo_orange.svg">
+    <img class="logo-img" (click)="goToHome()" src="../../assets/imgs/logo_orange.svg">
   </div>
 
   <img class="spin-img" *ngIf="showLoader" src="../../assets/imgs/spinner.svg"/>
@@ -10,6 +10,13 @@
     <list-component></list-component>
     <list-component></list-component>
     <list-component [isLast]="true"></list-component>
-  </div>
 
+    <div class="maps" (click)="openMaps()">
+      GO
+    </div>
+
+    <div class="qr" (click)="showQR()">
+      QR CODE
+    </div>
+  </div>
 </div>

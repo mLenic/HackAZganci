@@ -4,7 +4,6 @@ import { Platform, ToastController } from 'ionic-angular';
 import { NativeAudio } from '@ionic-native/native-audio';
 
 import { DashboardPage } from '../dashboard/dashboard';
-import { QRCodePage } from '../qrcode/qrcode';
 
 @Component({
   selector: 'page-details',
@@ -15,7 +14,7 @@ export class DetailsPage {
   public object;
 
   constructor(
-    public navController: NavController,
+    public navCtrl: NavController,
     public navParams: NavParams,
     public toastCtrl: ToastController,
     private nativeAudio: NativeAudio
@@ -26,7 +25,7 @@ export class DetailsPage {
   }
 
   public close() {
-    this.navController.setRoot(DashboardPage)
+    this.navCtrl.setRoot(DashboardPage)
   }
 
   public playText() {
@@ -40,9 +39,5 @@ export class DetailsPage {
       });
       toast.present();
     }
-  }
-
-  public showQR() {
-    this.navController.push(QRCodePage);
   }
 }

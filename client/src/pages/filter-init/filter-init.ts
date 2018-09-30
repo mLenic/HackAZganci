@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Platform } from 'ionic-angular';
+
+import { HomePage } from '../home/home';
 import { DashboardPage } from '../dashboard/dashboard';
 
 @Component({
@@ -23,6 +25,10 @@ export class FilterInitPage {
       this.progressBarUnit = this.width / this.questionsNumber;
       this.currentProgress = this.progressBarUnit;
     });
+  }
+
+  public goToHome() {
+    this.navCtrl.push(HomePage);
   }
 
   nextQuestion() {

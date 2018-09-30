@@ -1,5 +1,5 @@
 <div class="header">
-	<img class="logo-img" src="../../assets/imgs/logo_medium_light.svg">
+	<img class="logo-img" (click)="goToHome()" src="../../assets/imgs/logo_medium_light.svg">
 </div>
 <div class="content-wrapper">
 	<div class="questions-wrapper" [style.transform]="'translateX(-' + offset + 'px)'">
@@ -36,22 +36,22 @@
 				<div class="buttons-wrapper">
 					<div class="button-answer-50" (click)="nextQuestion()">
 						<div>
-						<img class="button-img" src="../../assets/imgs/icon_bus.svg">
+						  <img class="button-img" src="../../assets/imgs/icon_bus.svg">
 						</div>
 					</div>
 					<div class="button-answer-50" (click)="nextQuestion()">
 						<div>
-						<img class="button-img" src="../../assets/imgs/icon_car.svg">
+						  <img class="button-img" src="../../assets/imgs/icon_car.svg">
 						</div>
 					</div>
 					<div class="button-answer-50" (click)="nextQuestion()">
 						<div>
-						<img class="button-img" src="../../assets/imgs/icon_bike.svg">
+						  <img class="button-img" src="../../assets/imgs/icon_bike.svg">
 						</div>
 					</div>
 					<div class="button-answer-50" (click)="nextQuestion()">
 						<div>
-						<img class="button-img" src="../../assets/imgs/icon_shoe.svg">
+						  <img class="button-img" src="../../assets/imgs/icon_shoe.svg">
 						</div>
 					</div>
 				</div>
@@ -65,12 +65,12 @@
 				<div class="buttons-wrapper">
 					<div class="button-answer-50" (click)="nextQuestion()">
 						<div>
-						NO
+						  <img class="button-img" src="../../assets/imgs/x.svg">
 						</div>
 					</div>
 					<div class="button-answer-50" (click)="nextQuestion()">
 						<div>
-						YES
+						  <img class="button-img" src="../../assets/imgs/heart.svg">
 						</div>
 					</div>
 				</div>

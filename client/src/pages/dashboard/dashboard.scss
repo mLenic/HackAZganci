@@ -29,4 +29,25 @@
     width: 50%;
     padding-top: 150px;
   }
+
+  .maps {
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    height: 70px;
+    color: #FFCCCC;
+    background-color: #ef4c24;
+    display: flex;
+  }
+
+  .qr {
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    height: 70px;
+    color: #FFCCCC;
+    background-color: #247F6E;
+    display: flex;
+    margin: 20px 0;
+  }
 }
