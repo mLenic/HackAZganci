@@ -14,7 +14,7 @@ import { QRCodePage } from '../pages/qrcode/qrcode';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = DashboardPage;
+  rootPage:any = HomePage;
 
   constructor(
     platform: Platform,
