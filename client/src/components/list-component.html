@@ -8,9 +8,18 @@
       <h2>Postonjska jama</h2>
       <p>9:00 - 13:00</p>
     </div>
-    <div *ngIf="object" class="text">
-      <h2>{{object.title}}</h2>
-      <p>{{object.time1}} - {{object.time2}}</p>
+
+    <div class="list-text">
+        <div *ngIf="!object" class="text">
+            <h2>Postonjska jama</h2>
+            <p>9:00 - 13:00</p>
+        </div>
+        <div *ngIf="object" class="text">
+                <h2>{{object.title}}</h2>
+                <p *ngIf="object.time1 && object.time2">{{object.time1}} - {{object.time2}}</p>
+                <p *ngIf="!object.time2">{{object.time1}} </p>
+        </div>
+
     </div>
   </div>
 </div>

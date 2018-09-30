@@ -5,13 +5,24 @@
 
   <img class="spin-img" *ngIf="showLoader" src="../../assets/imgs/spinner.svg"/>
   <div *ngIf="!showLoader">
-    <list-component [isFirst]="true"></list-component>
-    <list-component [object]="heritage1"></list-component>
-    <list-component></list-component>
-    <list-component></list-component>
-    <list-component [isLast]="true"></list-component>
+      <div *ngIf="counter == 0">
+        <list-component [object]="arrayScenario1[0]" [isFirst]="true"></list-component>
+        <list-component [object]="arrayScenario1[1]"></list-component>
+        <list-component [object]="arrayScenario1[2]"></list-component>
+        <list-component [object]="arrayScenario1[3]"></list-component>
+        <list-component [object]="arrayScenario1[4]"></list-component>
+        <list-component [object]="arrayScenario1[5]" [isLast]="true"></list-component>
+      </div>
+      <div *ngIf="counter == 1">
+        <list-component [object]="arrayScenario2[0]" [isFirst]="true"></list-component>
+        <list-component [object]="arrayScenario2[1]"></list-component>
+        <list-component [object]="arrayScenario2[2]"></list-component>
+        <list-component [object]="arrayScenario2[3]"></list-component>
+        <list-component [object]="arrayScenario2[4]"></list-component>
+        <list-component [object]="arrayScenario2[5]" [isLast]="true"></list-component>
+      </div>
 
-    <div class="maps" (click)="openMaps()">
+      <div class="maps" (click)="openMaps()">
       GO
     </div>
 
