@@ -32,7 +32,6 @@ export class DashboardPage {
     }
 
   public goToHome() {
-    this.filter.setHomeCnt(1);
     this.navCtrl.push(HomePage);
   }
 

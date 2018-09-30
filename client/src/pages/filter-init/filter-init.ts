@@ -5,6 +5,8 @@ import { Platform } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { DashboardPage } from '../dashboard/dashboard';
 
+import { Filter } from '../../providers/filter';
+
 @Component({
   selector: 'page-filter-init',
   templateUrl: 'filter-init.html'
@@ -19,7 +21,10 @@ export class FilterInitPage {
 	public currentProgress = 0;
   public images = ['cerkev', 'domacija', 'freska', 'grad', 'kozolec', 'kulinarika', 'najdisce'];
 
-  constructor(public navCtrl: NavController, platform: Platform) {
+  constructor(
+    public navCtrl: NavController, 
+    platform: Platform,
+    public filter: Filter) {
     platform.ready().then((readySource) => {
       this.width = platform.width();
       this.progressBarUnit = this.width / this.questionsNumber;
@@ -31,7 +36,13 @@ export class FilterInitPage {
     this.navCtrl.push(HomePage);
   }
 
-  nextQuestion() {
+  nextQuestion(cnt: number = 3) {
+
+    if(cnt == 1) {
+      this.filter.setHomeCnt(1);
+    } else  if(cnt == 0){
+      this.filter.setHomeCnt(0);
+    }
   	this.questionCounter++;
     console.log(this.questionCounter)
 
