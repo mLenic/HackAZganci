@@ -25,7 +25,7 @@ export class MyApp {
     platform.ready().then(() => {
       statusBar.styleDefault();
       splashScreen.hide();
-      this.nativeAudio.preloadSimple('uniqueId1', 'assets/sounds/fails.wav');
+      this.nativeAudio.preloadSimple('uniqueId1', 'assets/sounds/kazina.wav');
     });
   }
 }

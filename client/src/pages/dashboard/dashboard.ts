@@ -126,7 +126,7 @@ export class DashboardPage {
           description: 'Večnamenska javna palača, zgrajena 1835-1837 pod vodstvom V. Vadnava, je strogo klasicistična arhitektura, ki odraža racionalizem 1. polovice 19. stol. Krasitvena dela v dvorani iz 19. stol. dopolnjujejo interierji v slogu funkcionalizma.',
           time1: '10.45',
           time2: '11.45',
-          sound: null,
+          sound: 'uniqueId1',
       },
       {
           title: 'Frančiškanski samostan',
