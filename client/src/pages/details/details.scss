@@ -33,7 +33,7 @@
   bottom: 0;
   background-color: #247F6E;
   width: 100%;
-  min-height: 30%;
+  min-height: 40%;
 }
 
 .play-icon {
@@ -41,4 +41,12 @@
   padding-top: 20px;
   width: 20%;
   left: 40%;
+}
+
+.play-description {
+    padding-top: 110px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+    font-size: 17px;
 }
