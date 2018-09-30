@@ -17,7 +17,7 @@ export class DashboardPage {
     public loadingTimeMs = 3000;
     public showLoader = true;
 
-    public counter = 1;
+    public counter;
 
     constructor(
         public navCtrl: NavController,
@@ -25,13 +25,15 @@ export class DashboardPage {
 
     }
     ionViewDidLoad() {
+      this.counter = this.filter.getHomeCnt();
+      console.log(this.counter);
         setTimeout(() => {
             this.showLoader = false;
         }, this.loadingTimeMs);
-        this.counter = this.filter.getCnt();
     }
 
   public goToHome() {
+    this.filter.setHomeCnt(1);
     this.navCtrl.push(HomePage);
   }
 
